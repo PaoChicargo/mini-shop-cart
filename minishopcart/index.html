@@ -1,0 +1,47 @@
+﻿    <!doctype html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Mini Shop Cart</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <main class="showcase">
+        <div class="aurora aurora--pink" aria-hidden="true"></div>
+        <div class="aurora aurora--yellow" aria-hidden="true"></div>
+        <div class="aurora aurora--blue" aria-hidden="true"></div>
+        <a class="logo" href="index.html" aria-label="Mini Shop Cart home"><span class="logo-mark">&#10022;</span><span>Mini<span>Shop</span></span></a>
+        <section class="welcome" aria-label="Welcome">
+        <p class="kicker">A little shop, beautifully simple</p>
+        <h1>Find something<br><em>you'll love.</em></h1>
+        <p class="intro">Browse our collection and put your favorites in the cart.</p>
+        </section>
+        <nav class="dock" aria-label="Main navigation">
+        <a class="dock-link is-active" href="index.html"><span class="dock-icon" aria-hidden="true">&#8962;</span><span>Home</span></a>
+        <a class="dock-link" href="about/about.html"><span class="dock-icon" aria-hidden="true">&#9432;</span><span>About</span></a>
+        <a class="dock-link" href="Member/member.html"><span class="dock-icon" aria-hidden="true">&#9825;</span><span>Member</span></a>
+        <a class="dock-link" href="Demo/index.html"><span class="dock-icon" aria-hidden="true">&#128722;</span><span>Demo</span></a>
+        <span class="dock-divider" aria-hidden="true"></span>
+        <button class="theme-toggle" type="button" aria-label="Switch to night mode" aria-pressed="false"><span class="theme-icon theme-icon--sun" aria-hidden="true">&#9728;</span><span class="theme-icon theme-icon--moon" aria-hidden="true">&#9790;</span></button>
+        </nav>
+    </main>
+    <script>
+        const themeButton = document.querySelector('.theme-toggle');
+        const savedTheme = localStorage.getItem('minishop-theme');
+        if (savedTheme === 'night') document.body.classList.add('night');
+        function updateThemeButton() {
+        const night = document.body.classList.contains('night');
+        themeButton.setAttribute('aria-pressed', night);
+        themeButton.setAttribute('aria-label', night ? 'Switch to day mode' : 'Switch to night mode');
+        }
+        updateThemeButton();
+        themeButton.addEventListener('click', () => {
+        const night = document.body.classList.toggle('night');
+        localStorage.setItem('minishop-theme', night ? 'night' : 'day');
+        updateThemeButton();
+        });
+    </script>
+    </body>
+    </html>

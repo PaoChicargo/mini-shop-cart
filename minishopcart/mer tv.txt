@@ -1,0 +1,20 @@
+    Header
+    ├── Logo
+    ├── Search bar
+    └── Cart button with item count
+
+    Main content
+    ├── Category filter
+    └── Product cards
+
+    Cart drawer or popup
+    ├── Cart items
+    ├── Quantity controls
+    ├── Subtotal
+    ├── Discount
+    └── Checkout button
+
+    Checkout modal
+    ├── Order summary
+    ├── Discount amount
+    └── Final total
